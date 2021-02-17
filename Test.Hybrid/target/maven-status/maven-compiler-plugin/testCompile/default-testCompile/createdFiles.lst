@@ -1,0 +1,5 @@
+parallel\Walletcheck.class
+parallel\checktest.class
+parallel\MyTestRunner.class
+parallel\AppHook.class
+parallel\Runner.class

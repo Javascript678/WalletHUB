@@ -1,0 +1,2 @@
+file:src/test/resources/com/parallel/check.feature:13
+file:src/test/resources/com/parallel/Walletcheck.feature:12

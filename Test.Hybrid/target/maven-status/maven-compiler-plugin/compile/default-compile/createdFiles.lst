@@ -1,0 +1,10 @@
+com\pages\PostMessage.class
+wallet\pages\ReviewsPage.class
+wallet\pages\WalletLoginPage.class
+com\pages\LoginPage.class
+com\util\ConfigReader.class
+wallet\pages\ProfileReviewConfirm.class
+com\driverfactor\DriverFactory.class
+wallet\pages\RedirectPage.class
+DriverActions\webActions.class
+wallet\pages\ConfirmReview.class
