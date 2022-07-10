@@ -22,11 +22,9 @@ public class ProfileReviewConfirm {
 
 	
 	public void Click_on_ProfileLink() {
-		//web.mouseover(driver, driver.findElement(UserLink));
 		driver.get("https://wallethub.com/profile/test-insurance-company/");
 		web.moveToElement(driver, driver.findElement(UserLink));
 		web.implicitWait(driver, 10);
-	//web.click(driver, driver.findElement(UserLink));
 		web.moveToElementClick(driver, driver.findElement(ProfileLink));
 		
 	}

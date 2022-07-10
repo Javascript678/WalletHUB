@@ -53,8 +53,6 @@ public class checktest {
 	    // E, List<E>, List<List<E>>, List<Map<K,V>>, Map<K,V> or
 	    // Map<K, List<V>>. E,K,V must be a String, Integer, Float,
 	    // Double, Byte, Short, Long, BigInteger or BigDecimal.
-	    //
-	    // For other transformations you can register a DataTableType.
 		List<Map<String,String>> dat = dataTable.asMaps();
 		for(int i=0;i<dat.size();i++) {
 			postedtext=dat.get(i).get("message");

@@ -71,8 +71,6 @@ public class Walletcheck {
 	public void validate_review_posted_and_review_stars_on_my_profile() {
 		prof= new ProfileReviewConfirm(DriverFactory.getDriver());
 		confirmrevw= new ConfirmReview(DriverFactory.getDriver());
-		 //String reviewtext=
-				// confirmrevw.validate();
 	    prof.Click_on_ProfileLink();
 	   String Insurance_compny_returnflag=  prof.validate_stars_insurance();
 	  String val[]=  Insurance_compny_returnflag.split(":");

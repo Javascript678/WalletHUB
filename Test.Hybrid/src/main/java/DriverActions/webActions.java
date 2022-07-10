@@ -7,8 +7,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.LogManager;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
@@ -26,8 +28,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.driverfactor.DriverFactory;
 
+
 public class webActions {
 	private WebDriver driver;
+	private Logger logger = org.apache.logging.log4j.LogManager.getLogger(webActions.class);
 	public void scrollByVisibilityOfElement(WebDriver driver, WebElement ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", ele);
@@ -39,6 +43,7 @@ public class webActions {
 
 		Actions act = new Actions(driver);
 		act.moveToElement(ele).click().build().perform();
+		logger.info("clicked on"+ele );
 
 	}
 
@@ -49,14 +54,16 @@ public class webActions {
 			ele.isDisplayed();
 			flag = true;
 		} catch (Exception e) {
-			// System.out.println("Location not found: "+locatorName);
+		 logger.info("Location not found: "+ele);
 			flag = false;
 		} finally {
 			if (flag) {
 				System.out.println("Successfully Found element at");
+				logger.info("Successfully Found element at");
 
 			} else {
 				System.out.println("Unable to locate element at");
+				logger.info("Unable to locate element"+ele);
 			}
 		}
 		return flag;
@@ -70,8 +77,10 @@ public class webActions {
 			flag = ele.isDisplayed();
 			if (flag) {
 				System.out.println("The element is Displayed");
+				logger.info("The element is Displayed");
 			} else {
 				System.out.println("The element is not Displayed");
+				logger.info("The element is  not Displayed");
 			}
 		} else {
 			System.out.println("Not displayed ");
@@ -87,8 +96,10 @@ public class webActions {
 			flag = ele.isSelected();
 			if (flag) {
 				System.out.println("The element is Selected");
+				logger.info("The element is selected"+ ele);
 			} else {
 				System.out.println("The element is not Selected");
+				logger.info("The element is not selected"+ ele);
 			}
 		} else {
 			System.out.println("Not selected ");
@@ -104,6 +115,7 @@ public class webActions {
 			flag = ele.isEnabled();
 			if (flag) {
 				System.out.println("The element is Enabled");
+				logger.info("The element is Enabled");
 			} else {
 				System.out.println("The element is not Enabled");
 			}
@@ -131,10 +143,12 @@ public class webActions {
 			flag = true;
 		} catch (Exception e) {
 			System.out.println("Location Not found");
+			logger.info("Location Not found"+ ele);
 			flag = false;
 		} finally {
 			if (flag) {
 				System.out.println("Successfully entered value");
+				logger.info("Successfully entered value" +text);
 			} else {
 				System.out.println("Unable to enter value");
 			}
@@ -155,9 +169,12 @@ public class webActions {
 			return false;
 		} finally {
 			if (flag) {
-				System.out.println("Select value from the DropDown");		
+				System.out.println("Select value from the DropDown");
+                logger.info("Select value from the DropDown"+ value);
 			} else {
 				System.out.println("Not Selected value from the DropDown");
+				logger.info(" Not Selected value from the DropDown"+ value);
+				
 				// throw new ElementNotFoundException("", "", "")
 			}
 		}
@@ -188,8 +205,10 @@ public class webActions {
 		} finally {
 			if (flag) {
 				System.out.println("Option selected by Index");
+				logger.info("Option selected by Index"+ index);
 			} else {
 				System.out.println("Option not selected by Index");
+				logger.info("Option not selected by Index"+ index);
 			}
 		}
 	}
@@ -220,8 +239,10 @@ public class webActions {
 		} finally {
 			if (flag) {
 				System.out.println("Option selected by Value");
+				logger.info("Option selected by Value"+ value);
 			} else {
 				System.out.println("Option not selected by Value");
+				logger.info("Option  not selected by Value"+ value);
 			}
 		}
 	}
@@ -411,8 +432,10 @@ public class webActions {
 		} finally {
 			if (flag) {
 				System.out.println(" MouserOver Action is performed on ");
+				logger.info(" MouserOver Action is performed on "+ element);
 			} else {
 				System.out.println("MouseOver action is not performed on");
+				logger.info(" MouserOver Action is  not performed on "+ element);
 			}
 		}
 	}
@@ -430,6 +453,7 @@ public class webActions {
 			flag = true;
 		} catch (Exception e) {
 			e.printStackTrace();
+			logger.info("element not found "+ ele);
 		}
 		return flag;
 	}
@@ -716,6 +740,7 @@ public class webActions {
 		String text=driver.findElement(locator).getText().trim();
 		if(flag) {
 			System.out.println("Captured Text is : \""+text+"\"");
+			logger.info("Captured Text is : \""+text+"\"");
 			
 		}
 		
@@ -757,8 +782,10 @@ public class webActions {
 		} finally {
 			if (flag) {
 				System.out.println("Able to click on \""+locatorName+"\"");
+                logger.info("Able to click on \""+locatorName+"\"");
 			} else {
 				System.out.println("Click Unable to click on \""+locatorName+"\"");
+				logger.info("Click Unable to click on \""+locatorName+"\"");
 			}
 		}
 

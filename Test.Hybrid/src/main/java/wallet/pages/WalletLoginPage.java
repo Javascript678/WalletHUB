@@ -25,7 +25,6 @@ public void enterUrl(String text) {
 
 public void enterLogin_details (String user, String pwd) {
 	web= new webActions();
-	//web.mouseOverElement(driver, driver.findElement(LoginLink));
 	web.click(driver, driver.findElement(LoginLink));
 	web.implicitWait(driver, 30);
 	web.type(driver.findElement(username), user);

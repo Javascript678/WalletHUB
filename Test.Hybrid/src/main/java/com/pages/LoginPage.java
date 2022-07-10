@@ -32,7 +32,6 @@ public class LoginPage {
 		
 	}
 	public boolean  validateHomeIcon() {
-		//web.pageLoadTimeOut(driver, 50);
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
@@ -41,7 +40,6 @@ public class LoginPage {
 		}
 		
 		web.click(driver, driver.findElement(Homeicon));
-		//web.explicitWait(driver, driver.findElement(Homeicon), 50);
 			 return web.isDisplayed(driver, driver.findElement(Homeicon));
 	}
 }

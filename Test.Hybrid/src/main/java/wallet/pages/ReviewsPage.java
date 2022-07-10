@@ -49,7 +49,6 @@ public boolean validatestarsfilled(String index) {
 
 public void clickonstar_hovered(String index) {
 	 clickreviewlink();
-	 //web.scrollByVisibilityOfElement(driver, driver.findElement(staridentify));
 	  boolean hoveredval=houverstars(index);
 	 // boolean filledval= validatestarsfilled(index);
 	  

@@ -23,7 +23,6 @@ public void writePost(String text) {
 	web.implicitWait(driver, 20);
 	web.click(driver, driver.findElement(postpath));
 	web.implicitWait(driver, 30);
-	//web.click(driver, driver.findElement(posttextpath));
 	web.type(driver.findElement(posttextpath),text);
 	web.implicitWait(driver, 20);
 	web.click(driver, driver.findElement(postbutton));

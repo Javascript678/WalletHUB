@@ -20,7 +20,6 @@ private By SubmitButton= By.xpath("//div[normalize-space()='Submit']");
 public void selectHealth_val(String text) {
 	web= new webActions();
 	web.pageLoadTimeOut(driver, 30);
-	//web.selectByVisibleText(text, driver.findElement(Healthselect));
 	web.click(driver, driver.findElement(Healthselect));
 	web.moveToElementClick(driver, driver.findElement(By.xpath("//ul[@class='dropdown-list ng-enter-element']/li[normalize-space()='"+text+"']")));
 }
